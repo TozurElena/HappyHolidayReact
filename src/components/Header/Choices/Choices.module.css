@@ -8,6 +8,34 @@
     color: white;
     background-color: #00c78b;
 }
+
+.wrapper{
+    position: relative;
+}
+.list{
+    position: absolute;
+    width: 300px;
+    padding: 20px 52px;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+    background-color: #00c78b;
+    border-radius: 30px;
+    top: 68px;
+
+}
+.item {
+    cursor: pointer;
+    line-height: 36px;
+    margin-bottom: 10px;
+    transition: color .5s ease-in-out;
+}
+.item:hover{
+    color: rgba(66, 233, 16, 0.9);
+}
+.item:last-child{
+    margin-bottom: 0;
+}
 @media (max-width: 1027px) {
     .button {
         width: 220px;

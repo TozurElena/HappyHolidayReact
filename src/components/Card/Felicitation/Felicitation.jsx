@@ -1,4 +1,4 @@
-import style from "./Felicitation.style.css";
+import style from "./Felicitation.module.css";
 
 const Felicitation = () => (
     <p className={style.felicitation} >
@@ -14,7 +14,6 @@ const Felicitation = () => (
 
     </p>
 );
-
 
 
 export default Felicitation;
