@@ -14,7 +14,7 @@ export const useHolidays = () => {
             })
             .then(data => setHolidays(data))
             .catch(err => console.error(err));
-    }, []);
+    }, [setHolidays]);
 
     return [holidays];
 }
