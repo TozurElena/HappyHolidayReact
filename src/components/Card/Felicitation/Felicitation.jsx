@@ -10,7 +10,7 @@ const Felicitation = () => {
         return (
             <p className={style.felicitation}>
 
-                {text}
+                {text || "Quel raison de fête ?"}
 
             </p>
 
