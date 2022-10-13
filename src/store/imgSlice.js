@@ -38,4 +38,4 @@ const imgSlice = createSlice({
     }
 })
 
-export default textSlice.reducer;
+export default imgSlice.reducer;
