@@ -1,9 +1,9 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {URI_API} from "../const/const";
-import {fetchText} from "./textSlice";
 
-export const fetchImg = createAsyncThunk(
-    'img/fetchImg',
+
+export const fetchImage = createAsyncThunk(
+    'image/fetchImage',
     async (holiday) => {
         const res = await fetch(`${URI_API}image/${holiday}`);
         const data = await res.json();
@@ -12,27 +12,25 @@ export const fetchImg = createAsyncThunk(
 );
 
 const imgSlice = createSlice({
-    name: 'img',
+    name: 'image',
     initialState: {
-        image: '',
+        urlImg: '',
         idImage: '',
         loading: '',
     },
     reducers: {},
     extraReducers: {
-        [fetchText.pending]: state => {
+        [fetchImage.pending]: state => {
             state.loading = 'loading';
-            state.text = '';
-            state.idText = '';
         },
-        [fetchText.fulfilled]: (state, action) => {
+        [fetchImage.fulfilled]: (state, action) => {
             state.loading = 'success';
-            state.text = action.payload.text;
-            state.idText = action.payload.idText;
+            state.urlImg = action.payload.urlImg;
+            state.idImg = action.payload.idImg;
         },
-        [fetchText.rejected]: state => {
+        [fetchImage.rejected]: state => {
             state.loading = 'failed';
-            state.text = '';
+            state.urlImg = '';
             state.idText = '';
         },
     }
