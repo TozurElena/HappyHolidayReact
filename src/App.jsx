@@ -1,6 +1,8 @@
 import Footer from "./components/footer/Footer.jsx";
 import Header from "./components/Header/Header.jsx";
 import Card from "./components/Card/Card";
+import EmptyCard from "./components/EmptyCard/EmptyCard";
+import {Route, Routes} from "react-router-dom";
 
 const wrapper = {
     display: 'flex',
@@ -12,9 +14,12 @@ const App = () =>  {
   return (
     <div>
       <div style={wrapper}>
-                      <Header />
-                      <Card/>
-                      <Footer />
+          <Header />
+          <Routes>
+              <Route path='card/:holiday' element={<Card/>} />
+              <Route path='/' element={<EmptyCard/>} />
+          </Routes>
+          <Footer />
       </div>
     </div>
   );

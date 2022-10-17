@@ -4,6 +4,7 @@ import {useSelector, useDispatch} from "react-redux";
 import {fetchHolidays, setHoliday} from "../../../store/holidaysSlice";
 import {fetchText} from "../../../store/textSlice";
 import {fetchImage, fetchImg} from "../../../store/imgSlice";
+import {Link, NavLink} from "react-router-dom";
 
 const Choices = () => {
     const [isOpenChoices, setIsOpenChoices] = useState(false);
@@ -38,7 +39,10 @@ const Choices = () => {
                                 toggleChoices();
                             }}
                         >
-                            {item[1]}
+                            <NavLink
+                                to={`card/${item[0]}`}
+                                className={({isActive}) => (isActive ? style.linkActive : '') }
+                            >{item[1]}</NavLink>
                         </li>
                     ))}
                 </ul>
